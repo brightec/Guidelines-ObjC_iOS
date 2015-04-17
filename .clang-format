@@ -1,0 +1,17 @@
+BasedOnStyle: Chromium
+AlignTrailingComments: true
+BreakBeforeBraces: Linux
+ColumnLimit: 0
+IndentWidth: 4
+KeepEmptyLinesAtTheStartOfBlocks: false
+ObjCSpaceAfterProperty: true
+ObjCSpaceBeforeProtocolList: true
+PointerBindsToType: false
+SpacesBeforeTrailingComments: 1
+TabWidth: 8
+UseTab: Never
+MaxEmptyLinesToKeep: 2
+SpacesInContainerLiterals: false
+AllowShortIfStatementsOnASingleLine: true
+BinPackArguments: false
+KeepEmptyLinesAtTheStartOfBlocks: true
