@@ -285,8 +285,6 @@ Local variables should not contain underscores.
 
 In method signatures, there should be a space after the method type (-/+ symbol). There should be a space between the method segments (matching Apple's style).  Always include a keyword and be descriptive with the word before the argument which describes the argument.
 
-The usage of the word "and" is reserved.  It should not be used for multiple parameters as illustrated in the `initWithWidth:height:` example below.
-
 **Preferred:**
 ```objc
 - (void)setExampleText:(NSString *)text image:(UIImage *)image;
@@ -587,21 +585,21 @@ Private properties should be declared in class extensions (anonymous categories)
 
 ## Booleans
 
-Objective-C uses `YES` and `NO`.  Therefore `true` and `false` should only be used for CoreFoundation, C or C++ code.  Since `nil` resolves to `NO` it is unnecessary to compare it in conditions. Never compare something directly to `YES`, because `YES` is defined to 1 and a `BOOL` can be up to 8 bits.
+Objective-C uses `YES` and `NO`.  Therefore `true` and `false` should only be used for CoreFoundation, C or C++ code.  Never compare something directly to `YES`, because `YES` is defined to 1 and a `BOOL` can be up to 8 bits.
 
 This allows for more consistency across files and greater visual clarity.
 
 **Preferred:**
 
 ```objc
-if (someObject) {}
+if (someBool) {} (checking the value of a BOOL)
+if (someObject == nil) {} (checking if an object is defined)
 if (![anotherObject boolValue]) {}
 ```
 
 **Not Preferred:**
 
 ```objc
-if (someObject == nil) {}
 if ([anotherObject boolValue] == NO) {}
 if (isAwesome == YES) {} // Never do this.
 if (isAwesome == true) {} // Never do this.
@@ -610,7 +608,7 @@ if (isAwesome == true) {} // Never do this.
 If the name of a `BOOL` property is expressed as an adjective, the property can omit the “is” prefix but specifies the conventional name for the get accessor, for example:
 
 ```objc
-@property (assign, getter=isEditable) BOOL editable;
+@property (assign, nonatomic, getter=isEditable) BOOL editable;
 ```
 Text and example taken from the [Cocoa Naming Guidelines](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CodingGuidelines/Articles/NamingIvarsAndTypes.html#//apple_ref/doc/uid/20001284-BAJGIIJE).
 
@@ -625,17 +623,18 @@ if (!error) {
 }
 ```
 
+or
+
+```objc
+if (!error) { return success; }
+```
+
 **Not Preferred:**
 ```objc
 if (!error)
     return success;
 ```
 
-or
-
-```objc
-if (!error) return success;
-```
 
 ### Ternary Operator
 
