@@ -1,3 +1,8 @@
+<p align="center">
+  <img width="100" src="https://github.com/brightec/.github/blob/master/brighteclogo2018.svg">
+</p>
+<br/>
+
 # Brightec Objective-C style guide.
 
 This style guide outlines the coding conventions for Brightec.
@@ -791,4 +796,12 @@ When possible, always turn on "Treat Warnings as Errors" in the target's Build S
 ## Credits
 
 This style guide has been adapted for Brightec by Cameron Cooke from the *[raywenderlich.com Objective-C style guide](https://github.com/raywenderlich/objective-c-style-guide)*.
+
+## License
+
+See [license](LICENSE)
+
+## Author
+
+This repo is maintained by the [Brightec](https://www.brightec.co.uk/) team
 
